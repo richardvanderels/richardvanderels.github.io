@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Block countries with Conditional Access and grant temporary exceptions with Access Packages"
+title: "Block countries with Conditional Access and grant temporary exceptions with Entitlement Management Access Packages"
 date: 2026-10-12 10:00:00 +0200
 categories: [Entra, Security]
 tags: [Conditional Access, Entitlement Management, Access Packages, Named Locations, Entra ID]
