@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configure Entitlement Management in Microsoft Entra ID Governance"
-date: 2026-10-09 10:00:00 +0200
+date: 2026-10-12 10:00:00 +0200
 categories: [Entra]
 tags: [Entra ID, Identity Governance, Entitlement Management]
 description: "A step-by-step guide to setting up catalogs, access packages, approvals, lifecycle settings and access removal in Entitlement Management."
