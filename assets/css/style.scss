@@ -1,0 +1,66 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Post content: a little more air and a readable line height */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.post-content h2 {
+  margin-top: 2.2rem;
+}
+
+.post-content h3 {
+  margin-top: 1.6rem;
+}
+
+/* Screenshots: never wider than the text, rounded, with a soft shadow */
+.post-content figure {
+  margin: 1.75rem 0;
+  text-align: center;
+}
+
+.post-content figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-content figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6a737d;
+}
+
+/* Homepage list of posts with description */
+.post-cards {
+  list-style: none;
+  padding: 0;
+}
+
+.post-cards li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.post-cards a {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.post-cards p {
+  margin: 0.3rem 0;
+}
+
+.post-cards .post-meta {
+  font-size: 0.9rem;
+  color: #6a737d;
+}
