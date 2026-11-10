@@ -1,30 +1,50 @@
 ---
 layout: post
-title: "Block access to the Microsoft admin portals with Conditional Access"
+title: "Block access to admin portals"
 date: 2026-11-10 10:00:00 +0100
 categories: [Entra, Security]
-tags: [Conditional Access, Entra ID, Admin Portals, Restrict Access, Microsoft Entra admin center]
-description: "Restricting the Microsoft Entra admin center is not enough. Normal users can still see group members and device owners. Use a Conditional Access policy to block the admin portals for everyone except an exclusion group."
+tags: [Conditional Access, Entra ID, Admin Portals, Restrict Access]
+description: "Normal users still have access to information in your tenant via Admin portals. Even if you’ve blocked access via the Restrict access to Microsoft Entra Admin center."
 ---
 
-Normal users still have access to information in your tenant through the admin portals, even when you have blocked access with the setting *Restrict access to Microsoft Entra admin center*.
+{% assign img = '/assets/images/block-access-to-admin-portals/' %}
 
-## The problem
+Normal users still have access to information in your tenant via Admin portals. Even if you’ve blocked access via the Restrict access to Microsoft Entra Admin center.
 
-You can restrict access to the Microsoft Entra admin center with the setting under **User settings**. This stops users from opening the portal, and they will see the message *You don't have access*. However, they can still search for resources.
+You can restrict access to Microsoft Entra admin center via the setting in User Settings.
 
-For example, a user can search for a group, select it, and see its members, including their email addresses. In the same way, a user can select a device and see the name of its owner and even their UPN.
+![Microsoft Entra admin center User settings with Restrict access to Microsoft Entra admin center set to Yes]({{ img | append: '01-user-settings-restrict-admin-center.png' | relative_url }})
 
-## The solution: a Conditional Access policy
+This will restrict access in the first place. And your users will get the message You don’t have access.
 
-To block access to the admin portals for all users, I created a Conditional Access policy with the following configuration:
+![You don't have access error page in the Microsoft Entra admin center]({{ img | append: '02-you-dont-have-access.png' | relative_url }})
 
-- **Users:** All users, excluding a specific group of users who are allowed to use the admin portals.
-- **Target resources:** Microsoft Admin Portals.
-- **Grant:** Block access.
+But they still can search for all Resources.
 
-I chose to exclude a group instead of excluding admin roles. We do not have admin users with permanently assigned roles, except for our break glass accounts. The group therefore controls who can work in the admin portals.
+![Search results for the R_AdminUsers group in the Microsoft Entra admin center]({{ img | append: '03-search-group.png' | relative_url }})
 
-After the policy is enabled, all users who are not in the excluded group will receive the message that they don't have access.
+You can select that group and even see its members.In this overview you could see all members of the group and their email address.
 
-Conditional Access requires a Microsoft Entra ID P1 license. You can find more information in the [Conditional Access documentation](https://learn.microsoft.com/entra/identity/conditional-access/overview).
+![Members of the R_AdminUsers group in the Microsoft Entra admin center]({{ img | append: '04-group-members.png' | relative_url }})
+
+Or even devices.`
+
+![Search results for a device in the Microsoft Entra admin center]({{ img | append: '05-search-device.png' | relative_url }})
+
+You can now select the device and see the name of the owner and even his UPN.
+
+![Device properties showing the owner and user principal name]({{ img | append: '06-device-properties.png' | relative_url }})
+
+With Conditional Access we can block for All Users to the Admin Portals.
+
+I’ve created a Conditional Access policy to block access to the Admin Portals and excluded a specific group of users.
+
+The reason why we’ve excluded a group and not just admin roles is that we don’t have admin users with permanent assigned roles except for our Break Glass accounts.
+
+Included the Target resource Microsoft Admin Portals. And Grant Block Acces to block access to the Admin Portals for all your users excluded the group that you want to exclude for this.
+
+![Conditional Access policy with Microsoft Admin Portals as target resource and Block access as grant control]({{ img | append: '07-conditional-access-policy.png' | relative_url }})
+
+All your users will now get the message that they don’t have access.
+
+![Access denied message after signing in with a user account]({{ img | append: '08-access-denied-sign-in.png' | relative_url }})
