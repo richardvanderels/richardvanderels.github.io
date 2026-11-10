@@ -23,11 +23,11 @@ But they still can search for all Resources.
 
 ![Search results for the R_AdminUsers group in the Microsoft Entra admin center]({{ img | append: '03-search-group.png' | relative_url }})
 
-You can select that group and even see its members.In this overview you could see all members of the group and their email address.
+You can select that group and even see its members. In this overview you could see all members of the group and their email address.
 
 ![Members of the R_AdminUsers group in the Microsoft Entra admin center]({{ img | append: '04-group-members.png' | relative_url }})
 
-Or even devices.`
+Or even devices.
 
 ![Search results for a device in the Microsoft Entra admin center]({{ img | append: '05-search-device.png' | relative_url }})
 
@@ -41,7 +41,7 @@ I’ve created a Conditional Access policy to block access to the Admin Portals 
 
 The reason why we’ve excluded a group and not just admin roles is that we don’t have admin users with permanent assigned roles except for our Break Glass accounts.
 
-Included the Target resource Microsoft Admin Portals. And Grant Block Acces to block access to the Admin Portals for all your users excluded the group that you want to exclude for this.
+Included the Target resource Microsoft Admin Portals. And Grant Block Access to block access to the Admin Portals for all your users excluded the group that you want to exclude for this.
 
 ![Conditional Access policy with Microsoft Admin Portals as target resource and Block access as grant control]({{ img | append: '07-conditional-access-policy.png' | relative_url }})
 
