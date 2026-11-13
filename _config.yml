@@ -5,5 +5,8 @@ url: "https://richardvanderels.github.io"
 baseurl: ""
 lang: nl
 theme: minima
+header_pages:
+  - index.md
+  - about.md
 plugins:
   - jekyll-feed

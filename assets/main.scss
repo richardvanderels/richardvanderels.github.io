@@ -76,6 +76,31 @@ h1, h2, h3, h4 {
   background: $blue-soft;
 }
 
+/* Light/dark toggle in the header */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+  padding: 0;
+  border: 1px solid $border;
+  border-radius: 999px;
+  background: transparent;
+  color: #5b5959;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: $blue;
+  border-color: $blue;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
 /* Post pages */
 .post-content {
   font-size: 1.05rem;
@@ -198,49 +223,84 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-/* Dark mode, following the system setting */
-@media (prefers-color-scheme: dark) {
-  body {
+/* Dark colours, used by the system setting and by the toggle */
+@mixin dark-theme($root) {
+  #{$root} body {
     color: #e7e9ef;
     background: #0e121c;
   }
 
-  a {
+  #{$root} a {
     color: #93a8f0;
   }
 
-  h1, h2, h3, h4, .site-title, .site-title:visited, .featured h2 a, .card-title a {
+  #{$root} h1, #{$root} h2, #{$root} h3, #{$root} h4,
+  #{$root} .site-title, #{$root} .featured h2 a, #{$root} .card-title a {
     color: #e7e9ef;
   }
 
-  .site-header {
+  #{$root} .site-header {
     background: #0e121c;
     border-bottom-color: #262d3f;
   }
 
-  .site-nav .page-link {
+  #{$root} .site-nav .page-link {
     color: #b7b4b4;
   }
 
-  .site-nav .page-link:hover {
+  #{$root} .site-nav .page-link:hover {
     color: #93a8f0;
     background: #1a2240;
   }
 
-  .featured,
-  .card {
+  #{$root} .theme-toggle {
+    color: #b7b4b4;
+    border-color: #262d3f;
+  }
+
+  #{$root} .theme-toggle:hover {
+    color: #93a8f0;
+    border-color: #93a8f0;
+  }
+
+  #{$root} .featured,
+  #{$root} .card {
     background: #151a27;
     border-color: #262d3f;
   }
 
-  .card {
+  #{$root} .card {
     box-shadow: none;
   }
 
-  .home .lead,
-  .card-summary,
-  .meta,
-  .post-content figcaption {
+  #{$root} .home .lead,
+  #{$root} .card-summary,
+  #{$root} .meta,
+  #{$root} .post-content figcaption {
     color: #a3a8b6;
   }
+}
+
+/* Follow the system setting unless the reader chose a theme */
+@media (prefers-color-scheme: dark) {
+  @include dark-theme("html:not([data-theme='light'])");
+
+  html:not([data-theme='light']) .theme-toggle .icon-moon {
+    display: none;
+  }
+
+  html:not([data-theme='light']) .theme-toggle .icon-sun {
+    display: inline;
+  }
+}
+
+/* The reader chose dark */
+@include dark-theme("html[data-theme='dark']");
+
+html[data-theme='dark'] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme='dark'] .theme-toggle .icon-sun {
+  display: inline;
 }
