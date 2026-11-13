@@ -1,9 +1,82 @@
 ---
 ---
 
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap");
 @import "{{ site.theme }}";
 
-/* Post content: a little more air and a readable line height */
+/* Colours and fonts, modelled on janbakker.tech */
+$blue: #3653a7;
+$blue-strong: #2c448b;
+$blue-soft: #eef1fa;
+$text: #1f2330;
+$muted: #5f6472;
+$border: #e3e6ee;
+$surface: #f7f8fb;
+$font-head: "Oswald", "Arial Narrow", "Segoe UI", system-ui, sans-serif;
+$font-body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+body {
+  font-family: $font-body;
+  font-size: 17px;
+  line-height: 1.7;
+  color: $text;
+  background: #fff;
+}
+
+a {
+  color: $blue;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: $blue-strong;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-head;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: $text;
+}
+
+/* Header and navigation */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid $border;
+  box-shadow: none;
+  min-height: 0;
+  padding: 14px 0;
+}
+
+.site-title,
+.site-title:visited {
+  font-family: $font-head;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $text;
+}
+
+.site-nav .page-link {
+  font-family: $font-head;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5b5959;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.site-nav .page-link:hover {
+  color: $blue;
+  background: $blue-soft;
+}
+
+/* Post pages */
 .post-content {
   font-size: 1.05rem;
   line-height: 1.75;
@@ -17,7 +90,6 @@
   margin-top: 1.6rem;
 }
 
-/* Screenshots: never wider than the text, rounded, with a soft shadow */
 .post-content figure {
   margin: 1.75rem 0;
   text-align: center;
@@ -28,39 +100,147 @@
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid $border;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(20, 30, 60, 0.06), 0 4px 16px rgba(20, 30, 60, 0.06);
 }
 
 .post-content figcaption {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-style: italic;
-  color: #6a737d;
+  color: $muted;
 }
 
-/* Homepage list of posts with description */
-.post-cards {
-  list-style: none;
-  padding: 0;
+/* Homepage: intro, featured latest post and a card grid */
+.wrapper:has(.home) {
+  max-width: 1120px;
 }
 
-.post-cards li {
-  padding: 1.1rem 0;
-  border-bottom: 1px solid #e1e4e8;
+.home .eyebrow {
+  font-family: $font-head;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $blue;
+  margin: 0;
 }
 
-.post-cards a {
-  font-size: 1.2rem;
-  font-weight: 600;
+.home .lead {
+  font-size: 1.15rem;
+  color: $muted;
+  max-width: 60ch;
+  margin: 0.4rem 0 0;
 }
 
-.post-cards p {
-  margin: 0.3rem 0;
+.home .intro {
+  padding: 36px 0 8px;
 }
 
-.post-cards .post-meta {
+.featured {
+  margin: 28px 0 36px;
+  padding: 28px;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: $surface;
+}
+
+.featured h2 {
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
+  margin: 0.3em 0;
+}
+
+.featured h2 a,
+.card-title a {
+  color: $text;
+  text-decoration: none;
+}
+
+.featured h2 a:hover,
+.card-title a:hover {
+  color: $blue;
+}
+
+.featured p {
+  margin: 0.4rem 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 8px 0 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(20, 30, 60, 0.06), 0 4px 16px rgba(20, 30, 60, 0.06);
+}
+
+.card-title {
+  font-size: 1.35rem;
+  margin: 0.3em 0 0.4em;
+}
+
+.card-summary {
+  color: $muted;
+  margin: 0.4rem 0 0;
+}
+
+.meta {
   font-size: 0.9rem;
-  color: #6a737d;
+  color: $muted;
+  margin: 0;
+}
+
+/* Dark mode, following the system setting */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e7e9ef;
+    background: #0e121c;
+  }
+
+  a {
+    color: #93a8f0;
+  }
+
+  h1, h2, h3, h4, .site-title, .site-title:visited, .featured h2 a, .card-title a {
+    color: #e7e9ef;
+  }
+
+  .site-header {
+    background: #0e121c;
+    border-bottom-color: #262d3f;
+  }
+
+  .site-nav .page-link {
+    color: #b7b4b4;
+  }
+
+  .site-nav .page-link:hover {
+    color: #93a8f0;
+    background: #1a2240;
+  }
+
+  .featured,
+  .card {
+    background: #151a27;
+    border-color: #262d3f;
+  }
+
+  .card {
+    box-shadow: none;
+  }
+
+  .home .lead,
+  .card-summary,
+  .meta,
+  .post-content figcaption {
+    color: #a3a8b6;
+  }
 }
