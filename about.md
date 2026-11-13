@@ -21,5 +21,5 @@ You can also find me on [LinkedIn](https://www.linkedin.com/in/richard-van-der-e
   <li class="cert"><a href="https://learn.microsoft.com/en-us/users/richardvanderels-4652/credentials/certification/m365-enterprise-administrator?tab=credentials-tab">Microsoft 365 Certified: Enterprise Administrator Expert</a></li>
   <li class="cert"><a href="https://learn.microsoft.com/en-us/users/richardvanderels-4652/credentials/certification/information-security-administrator?tab=credentials-tab">Information Security Administrator Associate</a></li>
   <li class="cert"><a href="https://learn.microsoft.com/en-us/users/richardvanderels-4652/credentials/certification/modern-desktop?tab=credentials-tab">Modern Desktop Administrator Associate</a></li>
-  <li class="cert"><a href="https://learn.microsoft.com/en-us/users/richardvanderels-4652/credentials/certification/azure-virtual-desktop-specialty?tab=credentials-tab">Azure Virtual Desktop Specialty</a></li>
+  <li class="cert"><img class="cert-logo" src="{{ '/assets/images/certifications/az-140.svg' | relative_url }}" alt="AZ-140 logo"><a href="https://learn.microsoft.com/en-us/users/richardvanderels-4652/credentials/certification/azure-virtual-desktop-specialty?tab=credentials-tab">Azure Virtual Desktop Specialty</a></li>
 </ul>
