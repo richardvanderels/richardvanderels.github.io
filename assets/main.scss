@@ -306,13 +306,62 @@ html[data-theme='dark'] .theme-toggle .icon-sun {
   display: inline;
 }
 
-/* About me: round profile photo */
+/* About me: square profile photo */
 .about-photo {
   display: block;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   margin: 8px 0 24px;
   object-fit: cover;
-  border-radius: 50%;
   border: 1px solid $border;
+}
+
+/* About me: certifications grid */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 32px;
+}
+
+.cert {
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(20, 30, 60, 0.06), 0 4px 16px rgba(20, 30, 60, 0.06);
+}
+
+.cert a {
+  color: $text;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cert a:hover {
+  color: $blue;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) .cert {
+    background: #151a27;
+    border-color: #262d3f;
+    box-shadow: none;
+  }
+
+  html:not([data-theme='light']) .cert a {
+    color: #e7e9ef;
+  }
+}
+
+html[data-theme='dark'] .cert {
+  background: #151a27;
+  border-color: #262d3f;
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .cert a {
+  color: #e7e9ef;
 }
