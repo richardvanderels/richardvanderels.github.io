@@ -305,3 +305,14 @@ html[data-theme='dark'] .theme-toggle .icon-moon {
 html[data-theme='dark'] .theme-toggle .icon-sun {
   display: inline;
 }
+
+/* About me: round profile photo */
+.about-photo {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 8px 0 24px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid $border;
+}
