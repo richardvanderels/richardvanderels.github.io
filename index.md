@@ -7,7 +7,7 @@ title: Blogs
 
 <section class="intro">
   <p class="eyebrow">Tech Blog · Richard van der Els</p>
-  <h1>Microsoft Entra, Intune and security</h1>
+  <h1>Microsoft Entra, Intune and Security</h1>
   <p class="lead">{{ site.description | strip }}</p>
 </section>
 
