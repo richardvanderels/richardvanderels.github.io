@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Distribute your Cloud PKI certificates"
-date: 2026-11-16 09:10:00 +0100
+date: 2026-11-18 09:10:00 +0100
 categories: [Intune, Security]
 tags: [Intune, Cloud PKI, PKI, SCEP]
 description: "Now head over to distribute your certificates to your devices with Intune."
@@ -87,10 +87,10 @@ On the assignment page select the groups that you want to include. Review your s
 
 ## SCEP certificate
 
-Now we need to create a SCEP certificate profile to deploy your certificates. Create a new policy select Platform Windows 10 and later, select Profile type Templates and select Template name SCEP certificate.
+Now we need to create a SCEP certificate profile to deploy your certificates. Create a new policy, select Platform Windows 10 and later, select Profile type Templates and select Template name SCEP certificate.
 
 <figure>
-  <img src="{{ img | append: '11-image11.png' | relative_url }}" alt="Now we need to create a SCEP certificate profile to deploy your certificates. Create a new policy select Platform Windows 10 and later, s...">
+  <img src="{{ img | append: '11-image11.png' | relative_url }}" alt="Now we need to create a SCEP certificate profile to deploy your certificates. Create a new policy, select Platform Windows 10 and later, s...">
 </figure>
 
 Provide the basics.
@@ -101,7 +101,7 @@ Provide the basics.
 
 You can now choose between a User or Device certificate. We will first create the User Certificate type. This user certificate will be useful for things like Wi-Fi, VPN or Certificate-based Authentication.
 
-Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your Key Size be aware that only Software KSP can be used with a 4096 key size and select the Hash algorithm.
+Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your key size. Be aware that only Software KSP can be used with a 4096 key size, and select the Hash algorithm.
 
 <figure>
   <img src="{{ img | append: '13-image13.png' | relative_url }}" alt="Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your Key ...">
@@ -141,7 +141,7 @@ Now we will repeat these steps for a Device Certificate type.
 
 Provide the Basics and go to Configuration settings.
 
-Select Certificate type Device your Subject name format will be filled automatically.
+Select Certificate type Device. Your Subject name format will be filled automatically.
 
 Select your Root certificate. The rest you can copy from previous steps.
 
@@ -149,10 +149,10 @@ Select your Root certificate. The rest you can copy from previous steps.
   <img src="{{ img | append: '19-image18.png' | relative_url }}" alt="Select your Root certificate. The rest you can copy from previous steps.">
 </figure>
 
-The Microsoft Architecture in the situation will look like this.
+The Microsoft architecture for this situation will look like this.
 
 <figure>
-  <img src="{{ img | append: '20-image19.png' | relative_url }}" alt="The Microsoft Architecture in the situation will look like this.">
+  <img src="{{ img | append: '20-image19.png' | relative_url }}" alt="The Microsoft architecture for this situation will look like this.">
 </figure>
 
 Source of the information:
@@ -161,7 +161,7 @@ Source of the information:
 
 ## Verify the certificate distribution
 
-Now check the certificate distribution navigate to Tenant Administration – Cloud PKI and select your Issuing CA. Click View all certificates to see the issued certificates.
+Now check the certificate distribution: navigate to Tenant Administration – Cloud PKI and select your Issuing CA. Click View all certificates to see the issued certificates.
 
 As you can see there are already 2 active issued certificates.
 
@@ -175,9 +175,9 @@ We have a user and a device certificate active.
   <img src="{{ img | append: '22-image21.png' | relative_url }}" alt="We have a user and a device certificate active.">
 </figure>
 
-And you can check it on your users device if your certificate is deployed well also.
+And you can check it on your users’ devices whether your certificate is deployed correctly.
 
-Open MMC and Add Certificate snap-in for Current User and/or Local Computer.
+Open MMC and add the Certificate snap-in for Current User and/or Local Computer.
 
 Your User certificate
 
@@ -202,5 +202,7 @@ And Issuing CA created with the Trusted Certificate Configuration Profiles.
 <figure>
   <img src="{{ img | append: '26-image25.png' | relative_url }}" alt="And Issuing CA created with the Trusted Certificate Configuration Profiles.">
 </figure>
+
+
 
 

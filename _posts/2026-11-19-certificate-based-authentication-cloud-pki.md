@@ -1,25 +1,25 @@
 ---
 layout: post
 title: "Certificate-based Authentication"
-date: 2026-11-16 09:20:00 +0100
+date: 2026-11-19 09:20:00 +0100
 categories: [Entra, Security]
 tags: [Entra ID, Certificate-based authentication, Cloud PKI, Conditional Access]
-description: "In this next blog we will even go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI."
+description: "In this next blog we will go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI."
 ---
 
 {% assign img = '/assets/images/certificate-based-authentication-cloud-pki/' %}
 
-In this next blog we will even go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI.
+In this next blog we will go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI.
 
 In our second blog we’ve already downloaded the Root CA and Issuing CA. We will need that in the upcoming steps.
 
-Some of the key benefits of Certificate-based Authentication is that is a phishing resistant MFA authentication method and it protects the accounts to work seamlessly with Entra ID Conditional Access policies.
+Some of the key benefits of Certificate-based Authentication are that it is a phishing-resistant MFA authentication method, and that it protects the accounts so they work seamlessly with Entra ID Conditional Access policies.
 
 <figure>
   <img src="{{ img | append: '01-image1.png' | relative_url }}" alt="Some of the key benefits of Certificate-based Authentication is that is a phishing resistant MFA authentication method and it protects t...">
 </figure>
 
-Login to your Entra Admin portal [https://entra.microsoft.com/](https://entra.microsoft.com/)
+Log in to your Entra Admin portal [https://entra.microsoft.com/](https://entra.microsoft.com/)
 
 Go to Identity Secure Score – Public key infrastructure
 
@@ -61,10 +61,10 @@ We will first add the Root CA. Browse to your Root CA and add the Certificate re
   <img src="{{ img | append: '07-image7.png' | relative_url }}" alt="We will first add the Root CA. Browse to your Root CA and add the Certificate revocation list URL. You can find this at the properties of...">
 </figure>
 
-Also Adding the Issuing CA. But change the option is this certificate authority the root to No.
+Also add the Issuing CA, but change the option “Is this certificate authority the root?” to No.
 
 <figure>
-  <img src="{{ img | append: '08-image8.png' | relative_url }}" alt="Also Adding the Issuing CA. But change the option is this certificate authority the root to No.">
+  <img src="{{ img | append: '08-image8.png' | relative_url }}" alt="Also add the Issuing CA, but change the option “Is this certificate authority the root?” to No.">
 </figure>
 
 When you’ve added both Root and Issuing certificates you will see them in your Certificate Authority.
@@ -75,7 +75,7 @@ When you’ve added both Root and Issuing certificates you will see them in your
 
 ## Authentication methods
 
-Before you will you start setting up the Authentication methods It’s good to have a group to target the Certificate-based authentication method.
+Before you start setting up the authentication methods, it’s good to have a group to target with the certificate-based authentication method.
 
 Go to Authentication methods in your Entra Admin Center and select Certificate-based authentication.
 
@@ -83,13 +83,13 @@ Go to Authentication methods in your Entra Admin Center and select Certificate-b
   <img src="{{ img | append: '10-image10.png' | relative_url }}" alt="Go to Authentication methods in your Entra Admin Center and select Certificate-based authentication.">
 </figure>
 
-Enable it and select groups – Add groups to add your group which Users who will be able to use Certificate-based authentication.
+Enable it and select groups – Add groups to add the group of users who will be able to use certificate-based authentication.
 
 <figure>
-  <img src="{{ img | append: '11-image11.png' | relative_url }}" alt="Enable it and select groups – Add groups to add your group which Users who will be able to use Certificate-based authentication.">
+  <img src="{{ img | append: '11-image11.png' | relative_url }}" alt="Enable it and select groups – Add groups to add the group of users who will be able to use certificate-based authentication.">
 </figure>
 
-Now Configure some settings. Enable Require CRL validation this will check the CRL for every CA. Enable Issuer Hints this will only show valid certificates during your users authentication.
+Now configure some settings. Enable Require CRL validation, which checks the CRL for every CA. Enable Issuer Hints, which only shows valid certificates during your users’ authentication.
 
 <figure>
   <img src="{{ img | append: '12-image12.png' | relative_url }}" alt="Now Configure some settings. Enable Require CRL validation this will check the CRL for every CA. Enable Issuer Hints this will only show ...">
@@ -121,9 +121,9 @@ Acknowledge the warning before you can Save your actions.
 
 ## Login with your user with a certificate
 
-If you now open a Microsoft portal, for example [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and login with a user that is assigned to the group for Certificate-based Authentication.
+If you now open a Microsoft portal, for example [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and log in with a user that is assigned to the group for Certificate-based Authentication.
 
-In this test case I will use an In Private browser session to not get logged in with your already approved MFA.
+In this test case I will use an InPrivate browser session, so you are not logged in with your already approved MFA.
 
 Fill in the username and click Next.
 
@@ -131,10 +131,10 @@ Fill in the username and click Next.
   <img src="{{ img | append: '17-image17.png' | relative_url }}" alt="Fill in the username and click Next.">
 </figure>
 
-Instead of entering your Password click Sign in another way.
+Instead of entering your password, click Sign in another way.
 
 <figure>
-  <img src="{{ img | append: '18-image18.png' | relative_url }}" alt="Instead of entering your Password click Sign in another way.">
+  <img src="{{ img | append: '18-image18.png' | relative_url }}" alt="Instead of entering your password, click Sign in another way.">
 </figure>
 
 Choose the option Use a certificate or smart card.
@@ -143,16 +143,16 @@ Choose the option Use a certificate or smart card.
   <img src="{{ img | append: '19-image19.png' | relative_url }}" alt="Choose the option Use a certificate or smart card.">
 </figure>
 
-You will now see the available certificates. Because you set the option Issuer Hint you will only see valid options. Select your Certificate and click OK.
+You will now see the available certificates. Because you set the option Issuer Hints you will only see valid options. Select your Certificate and click OK.
 
 <figure>
-  <img src="{{ img | append: '20-image20.png' | relative_url }}" alt="You will now see the available certificates. Because you set the option Issuer Hint you will only see valid options. Select your Certific...">
+  <img src="{{ img | append: '20-image20.png' | relative_url }}" alt="You will now see the available certificates. Because you set the option Issuer Hints you will only see valid options. Select your Certific...">
 </figure>
 
-When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tenant.
+When your certificate is accepted, you will see a request to stay signed in, if this is still configured in your tenant.
 
 <figure>
-  <img src="{{ img | append: '21-image21.png' | relative_url }}" alt="When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tenant.">
+  <img src="{{ img | append: '21-image21.png' | relative_url }}" alt="When your certificate is accepted, you will see a request to stay signed in, if this is still configured in your tenant.">
 </figure>
 
 Check the sign-in logs of the user to see that the user is certificate-based authenticated.
@@ -176,5 +176,7 @@ In the Authentication methods of your user, you can also see the System preferre
 <figure>
   <img src="{{ img | append: '24-image24.png' | relative_url }}" alt="In the Authentication methods of your user, you can also see the System preferred multifactor authentication method.">
 </figure>
+
+
 
 

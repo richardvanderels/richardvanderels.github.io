@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setup Cloud PKI in Intune"
-date: 2026-11-16 09:00:00 +0100
+date: 2026-11-17 09:00:00 +0100
 categories: [Intune, Security]
 tags: [Intune, Cloud PKI, PKI, Security]
 description: "In this blog I will explain how to set up Cloud PKI in Intune step-by-step."
@@ -23,9 +23,9 @@ Cloud PKI is a great way to make use of PKI without having to set up a complete 
 
 But keep in mind that this solution will only work for Intune managed devices.
 
-There are some known issues and limitations. You can only create up to 6 CA’s in your Intune tenant. And Intune will only show to first 1000 issued certificates in the portal.
+There are some known issues and limitations. You can only create up to 6 CAs in your Intune tenant. And Intune will only show the first 1000 issued certificates in the portal.
 
-Login to your Intune Admin portal [https://intune.microsoft.com](https://intune.microsoft.com)
+Log in to your Intune Admin portal [https://intune.microsoft.com](https://intune.microsoft.com)
 
 And navigate to Tenant Administration – Cloud PKI and click Create.
 
@@ -59,10 +59,10 @@ Select the Extended Key Usages. Be aware that you can’t change this anymore af
   <img src="{{ img | append: '06-image6.png' | relative_url }}" alt="Select the Extended Key Usages. Be aware that you can’t change this anymore after you’ve created your Root CA.">
 </figure>
 
-Provide the Subject attributes and select the Encryption Key size and algorithm click Next.
+Provide the Subject attributes and select the Encryption Key size and algorithm and click Next.
 
 <figure>
-  <img src="{{ img | append: '07-image7.png' | relative_url }}" alt="Provide the Subject attributes and select the Encryption Key size and algorithm click Next.">
+  <img src="{{ img | append: '07-image7.png' | relative_url }}" alt="Provide the Subject attributes and select the Encryption Key size and algorithm and click Next.">
 </figure>
 
 In the Review + create step you can check all your settings and you will also be warned once again that you can’t edit the CA after it’s created.
@@ -103,15 +103,17 @@ In the Review + create step you can check all your settings and you will also be
   <img src="{{ img | append: '13-image13.png' | relative_url }}" alt="In the Review + create step you can check all your settings and you will also be warned once again that you can’t edit the CA after it’s ...">
 </figure>
 
-Your Root CA en Issuing CA are now created and Active.
+Your Root CA and Issuing CA are now created and Active.
 
 <figure>
-  <img src="{{ img | append: '14-image14.png' | relative_url }}" alt="Your Root CA en Issuing CA are now created and Active.">
+  <img src="{{ img | append: '14-image14.png' | relative_url }}" alt="Your Root CA and Issuing CA are now created and Active.">
 </figure>
 
 You have now successfully set up your Cloud PKI environment within minutes.
 
-You can use these certificates to distribute certificates to your users and clients. In the upcoming blog posts I will show you how to distribute certificates and where you can use them for.
+You can use these certificates to distribute certificates to your users and clients. In the upcoming blog posts I will show you how to distribute certificates and what you can use them for.
+
+
 
 
 
