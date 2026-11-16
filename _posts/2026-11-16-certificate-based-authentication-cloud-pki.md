@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Certificated-based Authentication"
+title: "Certificate-based Authentication"
 date: 2026-11-16 09:20:00 +0100
 categories: [Entra, Security]
 tags: [Entra ID, Certificate-based authentication, Cloud PKI, Conditional Access]
-description: "In this next blog we will even go even further, and we will setup Certificated-based Authentication by the certificate distribution by your Cloud PKI."
+description: "In this next blog we will even go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI."
 ---
 
 {% assign img = '/assets/images/certificate-based-authentication-cloud-pki/' %}
 
-In this next blog we will even go even further, and we will setup Certificated-based Authentication by the certificate distribution by your Cloud PKI.
+In this next blog we will even go even further, and we will set up Certificate-based Authentication by the certificate distribution by your Cloud PKI.
 
 In our second blog we’ve already downloaded the Root CA and Issuing CA. We will need that in the upcoming steps.
 
-Some of the key benefits of Certificated-based Authentication is that is a phishing resistant MFA authentication method and it protects the accounts to work seamlessly with Entra ID Conditional Access policies.
+Some of the key benefits of Certificate-based Authentication is that is a phishing resistant MFA authentication method and it protects the accounts to work seamlessly with Entra ID Conditional Access policies.
 
 <figure>
-  <img src="{{ img | append: '01-image1.png' | relative_url }}" alt="Some of the key benefits of Certificated-based Authentication is that is a phishing resistant MFA authentication method and it protects t...">
+  <img src="{{ img | append: '01-image1.png' | relative_url }}" alt="Some of the key benefits of Certificate-based Authentication is that is a phishing resistant MFA authentication method and it protects t...">
 </figure>
 
 Login to your Entra Admin portal [https://entra.microsoft.com/](https://entra.microsoft.com/)
@@ -149,10 +149,10 @@ You will now see the available certificates. Because you set the option Issuer H
   <img src="{{ img | append: '20-image20.png' | relative_url }}" alt="You will now see the available certificates. Because you set the option Issuer Hint you will only see valid options. Select your Certific...">
 </figure>
 
-When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tentant.
+When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tenant.
 
 <figure>
-  <img src="{{ img | append: '21-image21.png' | relative_url }}" alt="When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tentant.">
+  <img src="{{ img | append: '21-image21.png' | relative_url }}" alt="When your certificate will be granted you will see. A request to stay signed in? If this is still configured in your tenant.">
 </figure>
 
 Check the sign-in logs of the user to see that the user is certificate-based authenticated.
@@ -176,4 +176,5 @@ In the Authentication methods of your user, you can also see the System preferre
 <figure>
   <img src="{{ img | append: '24-image24.png' | relative_url }}" alt="In the Authentication methods of your user, you can also see the System preferred multifactor authentication method.">
 </figure>
+
 

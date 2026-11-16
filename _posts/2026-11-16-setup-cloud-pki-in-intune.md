@@ -4,12 +4,12 @@ title: "Setup Cloud PKI in Intune"
 date: 2026-11-16 09:00:00 +0100
 categories: [Intune, Security]
 tags: [Intune, Cloud PKI, PKI, Security]
-description: "In this blog I will explain how to setup Cloud PKI in Intune step-by-step."
+description: "In this blog I will explain how to set up Cloud PKI in Intune step-by-step."
 ---
 
 {% assign img = '/assets/images/setup-cloud-pki-in-intune/' %}
 
-In this blog I will explain how to setup Cloud PKI in Intune step-by-step. I certainly will not be the first one who will write about this. But now that Microsoft is adding this feature to your E5 license it’s a good idea to get a look into this.
+In this blog I will explain how to set up Cloud PKI in Intune step-by-step. I certainly will not be the first one who will write about this. But now that Microsoft is adding this feature to your E5 license it’s a good idea to get a look into this.
 
 See this blog post from Microsoft about the additions to licenses:
 
@@ -19,7 +19,7 @@ See this blog post from Microsoft about the additions to licenses:
   <img src="{{ img | append: '01-image1.png' | relative_url }}" alt="Advancing Microsoft 365: New capabilities and pricing update | Microsoft 365 Blog">
 </figure>
 
-Cloud PKI is a great way to make use of PKI without having to setup a complete infrastructure. It’s a PKI infrastructure in the cloud. And there is no need to maintain (on-premises) servers.
+Cloud PKI is a great way to make use of PKI without having to set up a complete infrastructure. It’s a PKI infrastructure in the cloud. And there is no need to maintain (on-premises) servers.
 
 But keep in mind that this solution will only work for Intune managed devices.
 
@@ -109,7 +109,9 @@ Your Root CA en Issuing CA are now created and Active.
   <img src="{{ img | append: '14-image14.png' | relative_url }}" alt="Your Root CA en Issuing CA are now created and Active.">
 </figure>
 
-You have now successfully setup your Cloud PKI environment within minutes.
+You have now successfully set up your Cloud PKI environment within minutes.
 
 You can use these certificates to distribute certificates to your users and clients. In the upcoming blog posts I will show you how to distribute certificates and where you can use them for.
+
+
 

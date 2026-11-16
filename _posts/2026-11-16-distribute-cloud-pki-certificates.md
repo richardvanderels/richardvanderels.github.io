@@ -31,10 +31,10 @@ Select your Issuing CA and go to Properties to copy the SCEP URI and Download th
 
 ## Create Intune policies
 
-Let’s headover to Device – Configuration
+Let’s head over to Device – Configuration
 
 <figure>
-  <img src="{{ img | append: '03-image3.png' | relative_url }}" alt="Let’s headover to Device – Configuration">
+  <img src="{{ img | append: '03-image3.png' | relative_url }}" alt="Let’s head over to Device – Configuration">
 </figure>
 
 Click Create – New Policy
@@ -99,9 +99,9 @@ Provide the basics.
   <img src="{{ img | append: '12-image12.png' | relative_url }}" alt="Provide the basics.">
 </figure>
 
-You can now choose between a User or Device certificate. We will first create the User Certificate type. This user certificate will be useful for things like Wi-Fi, VPN or Certificated-based Authentication.
+You can now choose between a User or Device certificate. We will first create the User Certificate type. This user certificate will be useful for things like Wi-Fi, VPN or Certificate-based Authentication.
 
-Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your Key Size be aware that only Software KSP can be used with a 4096 key size and select the Hash alogorithm.
+Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your Key Size be aware that only Software KSP can be used with a 4096 key size and select the Hash algorithm.
 
 <figure>
   <img src="{{ img | append: '13-image13.png' | relative_url }}" alt="Select the Key Storage Provider (KSP), select the Key usage, we will select both Digital signature and Key encipherment, select your Key ...">
@@ -202,4 +202,5 @@ And Issuing CA created with the Trusted Certificate Configuration Profiles.
 <figure>
   <img src="{{ img | append: '26-image25.png' | relative_url }}" alt="And Issuing CA created with the Trusted Certificate Configuration Profiles.">
 </figure>
+
 
