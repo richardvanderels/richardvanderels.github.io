@@ -15,6 +15,8 @@ This blog describes how to configure cross-tenant synchronization settings. With
   <img src="{{ img | append: '01-image1.png' | relative_url }}" alt="This blog describes how to configure cross-tenant synchronization settings. With Cross-tenant synchronization you can automate the creati...">
 </figure>
 
+Source: [Cross-tenant synchronization overview - Microsoft Learn](https://learn.microsoft.com/en-gb/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
+
 ## Setup
 
 Everything we will do for this will be in the Entra Admin Portal.
@@ -79,6 +81,8 @@ Microsoft has made a diagram for this, showing which settings you have to set in
   <img src="{{ img | append: '10-image10.png' | relative_url }}" alt="Microsoft has made a diagram for this, showing which settings you have to set in your source and target tenant.">
 </figure>
 
+Source: [Cross-tenant synchronization overview - Microsoft Learn](https://learn.microsoft.com/en-gb/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview)
+
 After we’ve configured the External Identities settings in both tenants, we will configure the Cross-tenant synchronization settings in the Source tenant.
 
 <figure>
@@ -114,5 +118,6 @@ As you can see, we now have our user Han Burger provisioned from our Source tena
 </figure>
 
 Hope this blog helped you with the set up of your cross-tenant synchronization
+
 
 
